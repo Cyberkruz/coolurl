@@ -1,0 +1,62 @@
+﻿@model Metamask.Web.Models.MaskPageViewModel
+@{
+  Layout = null;
+  ViewData["Title"] = "MaskPage";
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@Model.PageMask.Title</title>
+
+  <meta name="og:type" content="article" />
+  <meta name="og:title" content="@Model.PageMask.Title" />
+  <meta name="og:description" content="@Model.PageMask.Description" />
+  <meta name="og:url" content="@Model.Url" />
+  <meta name="site_name" content="Interesting Links" />
+  <meta property="article:tag" content="alt tag" />
+  <meta property="article:tag" content="canonical tag" />
+  <meta property="article:tag" content="header tag" />
+  <meta property="article:tag" content="html" />
+  <meta property="article:tag" content="html tags" />
+  <meta property="article:tag" content="meta description" />
+  <meta property="article:tag" content="meta tags" />
+  <meta property="article:tag" content="open graph" />
+  <meta property="article:tag" content="responsive design meta tag" />
+  <meta property="article:tag" content="robots meta tag" />
+  <meta property="article:tag" content="seo" />
+  <meta property="article:tag" content="title tag" />
+  <meta property="article:tag" content="twitter card" />
+  <meta property="article:section" content="Search Engine Optimization" />
+  <meta property="article:published_time" content="@Model.PageMask.CreateDateUtc.ToString("{0:O}")" />
+  <meta property="article:modified_time" content="@Model.PageMask.UpdateDateUtc.ToString("{0:O}")" />
+  <meta property="og:updated_time" content="@Model.PageMask.UpdateDateUtc.ToString("{0:O}")" />
+  @*<meta property="og:image" content="https://s3.amazonaws.com/awr.blog/blog/wp-content/uploads/2018/06/10155245/social-Meta-Tags-in-2019-Why-They-are-Important-in-SEO.png" />
+    <meta property="og:image:secure_url" content="https://s3.amazonaws.com/awr.blog/blog/wp-content/uploads/2018/06/10155245/social-Meta-Tags-in-2019-Why-They-are-Important-in-SEO.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="512" />*@
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:description" content="@Model.PageMask.Description" />
+  <meta name="twitter:title" content="@Model.PageMask.Title" />
+  @*<meta name="twitter:site" content="@awebranking" />
+  <meta name="twitter:image" content="https://s3.amazonaws.com/awr.blog/blog/wp-content/uploads/2018/06/10155245/social-Meta-Tags-in-2019-Why-They-are-Important-in-SEO.png" />
+  <meta name="twitter:creator" content="@Ashok83" />*@
+</head>
+<body>
+  <h1 style="text-align: center;">Loading</h1>
+  <script type="text/javascript">
+    (function () {
+      setTimeout(function () {
+        try {
+          window.location.replace("@Model.PageMask.TargetUrl");
+        } catch (e) {
+          window.location = "@Model.PageMask.TargetUrl";
+        }
+      }, 10);
+    })();
+  </script>
+</body>
+</html>
+
+

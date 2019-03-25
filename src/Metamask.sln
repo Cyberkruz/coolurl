@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metamask.Web", "Metamask.Web\Metamask.Web.csproj", "{F22C81AA-2D0D-495A-916A-712C24F9CD7C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metamask", "Metamask\Metamask.csproj", "{B260079A-12A6-4E64-8EF7-1FE62411F830}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20C14321-4AAB-41B2-8AB9-7F340D7F2AB6}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F22C81AA-2D0D-495A-916A-712C24F9CD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22C81AA-2D0D-495A-916A-712C24F9CD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22C81AA-2D0D-495A-916A-712C24F9CD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22C81AA-2D0D-495A-916A-712C24F9CD7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B260079A-12A6-4E64-8EF7-1FE62411F830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B260079A-12A6-4E64-8EF7-1FE62411F830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B260079A-12A6-4E64-8EF7-1FE62411F830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B260079A-12A6-4E64-8EF7-1FE62411F830}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6A1D14D-0F5B-4AD6-B0B8-C22F454703CF}
+	EndGlobalSection
+EndGlobal

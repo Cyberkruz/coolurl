@@ -1,0 +1,160 @@
+﻿@model Metamask.Web.Models.IndexViewModel
+@{
+  ViewData["Title"] = "Hide Your Link";
+}
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">Hide your link</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#projects">Tech</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#signup">Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navigation -->
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="text-center">
+      <h1 class="mb-2 text-uppercase">Hide your link</h1>
+      <h2 class="text-white-50 mb-5">An application designed to hide the metadata of a website for good-hearted office pranks.</h2>
+
+      <div class="card py-4">
+        <div class="card-body text-center">
+          <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+          <h4 class="text-uppercase m-0">Link Data</h4>
+          <hr class="my-4">
+          <form asp-action="index" asp-controller="home" autocomplete="off" class="text-left">
+            <div class="form-group">
+              <label asp-for="Input.TargetUrl"></label>
+              <input asp-for="Input.TargetUrl" class="form-control" />
+              <span asp-validation-for="Input.TargetUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="Input.Title"></label>
+              <input asp-for="Input.Title" class="form-control" />
+              <span asp-validation-for="Input.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="Input.Description"></label>
+              <textarea asp-for="Input.Description" class="form-control"></textarea>
+              <span asp-validation-for="Input.Description" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Link</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- About -->
+<section id="about" class="about-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-white mb-4">Don't let Slack tell your friends it's a Rickroll!</h2>
+        <p class="text-white-50">
+          We generate a page displaying your custom title and description. When the page loads it will send them to any destination you choose. Create fake good-hearted office pranks.
+        </p>
+      </div>
+    </div>
+    <img src="img/ipad.png" class="img-fluid" alt="">
+  </div>
+</section>
+<!-- End About -->
+
+<!-- Projects -->
+<section id="projects" class="projects-section bg-light">
+  <div class="container">
+
+    <!-- Featured Project Row -->
+    <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+      <div class="col-xl-8 col-lg-7">
+        <img class="img-fluid mb-3 mb-lg-0" src="img/bg-masthead.jpg" alt="">
+      </div>
+      <div class="col-xl-4 col-lg-5">
+        <div class="featured-text text-center text-lg-left">
+          <h4>Tech Stack</h4>
+          <p class="text-black-50 mb-0">This project is built with ASP.NET MVC Core 2. It has an MSSQL datastore, and uses Javascript to push the user to their final destination. A link to the source is below.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project One Row -->
+    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+      <div class="col-lg-6">
+        <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+      </div>
+      <div class="col-lg-6">
+        <div class="bg-black text-center h-100 project">
+          <div class="d-flex h-100">
+            <div class="project-text w-100 my-auto text-center text-lg-left">
+              <h4 class="text-white">Why is it pretty?</h4>
+              <p class="mb-0 text-white-50">I used <a href="https://github.com/BlackrockDigital/startbootstrap-grayscale">an existing Bootstrap template</a> and customized it to finish it faster. They did a good job.</p>
+              <hr class="d-none d-lg-block mb-0 ml-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Two Row -->
+    <div class="row justify-content-center no-gutters">
+      <div class="col-lg-6">
+        <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+      </div>
+      <div class="col-lg-6 order-lg-first">
+        <div class="bg-black text-center h-100 project">
+          <div class="d-flex h-100">
+            <div class="project-text w-100 my-auto text-center text-lg-right">
+              <h4 class="text-white">Why make it?</h4>
+              <p class="mb-0 text-white-50">I'm attempting to build a number of projects relatively quickly using varied technologies.</p>
+              <hr class="d-none d-lg-block mb-0 mr-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Projects -->
+
+<!-- Signup Section -->
+<section id="signup" class="signup-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+        <h2 class="text-white mb-5">More info on the project below</h2>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Signup -->
+
+@section Scripts
+  {
+  <partial name="_ValidationScriptsPartial" />
+}
