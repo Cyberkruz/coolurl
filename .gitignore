@@ -1,0 +1,50 @@
+# ReSharper meta directory
+_ReSharper*
+
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+bin
+obj
+clientbin
+csx/
+csvs/
+App_Data/
+rcf/
+PublishProfiles/
+.vs/
+artifacts/
+wwwroot/*
+
+# mstest test results
+TestResults
+
+# nuget packages
+src/packages/*
+src/Rentler.Pro.Services/packages/*
+!packages/repositories.config
+
+# User Specific Files
+*.user
+*.suo
+*.sln.cache
+*.sln.GhostDoc.xml
+*.Publish.xml
+*.GhostDoc.xml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# node
+node_modules/
+bower_components/
+npm-debug.log
+.sass-cache
+
+#vs code
+.vscode/
