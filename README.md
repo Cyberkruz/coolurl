@@ -7,16 +7,16 @@ An application designed to hide the metadata of a website for good-hearted offic
 ## Technology
 
 * .NET Core 2 MVC
-* MSSQL Server
+* Postgres Server
 * Entity Framework
 * xUnit
 * Bootstrap / JQuery
 
 ## Running the application locally
 
-Since this application requires MSSQL server you'll need to it running. While you don't need to create the database, the src/Metamask.Web/appsettings.Development.json file will need to have the connection string updated to point to your database.
+Since this application requires Postgres server you'll need to it running. While you don't need to create the database, the src/Metamask.Web/appsettings.Development.json file will need to have the connection string updated to point to your database.
 
-> Note: I prefer to use Docker to run SQL Server. To do this check out this article: https://www.mattkruskamp.com/blog/2017/running-development-databases-with-docker/
+> Note: I prefer to use Docker to run Postgres Server. To do this check out this article: https://www.mattkruskamp.com/blog/2017/running-development-databases-with-docker/
 
 ### Visual Studio
 

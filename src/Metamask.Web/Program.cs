@@ -49,6 +49,10 @@ namespace Metamask.Web
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
+                        .ConfigureAppConfiguration((context, config) =>
+                        {
+                            config.AddJsonFile("settings/appsettings.docker.json", optional: true);
+                        })
                         .UseStartup<Startup>()
                         .UseSerilog();
                 });
