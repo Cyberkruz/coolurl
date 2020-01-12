@@ -18,6 +18,10 @@ Since this application requires Postgres server you'll need to it running. While
 
 > Note: I prefer to use Docker to run Postgres Server. To do this check out this article: https://www.mattkruskamp.com/blog/2017/running-development-databases-with-docker/
 
+```
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+```
+
 ### Visual Studio
 
 Open the src/Metamask.sln, set the startup project to Metamask.Web, and press f5. The application will start and the database will automatically be created.
