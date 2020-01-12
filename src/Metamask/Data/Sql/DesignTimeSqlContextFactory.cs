@@ -22,9 +22,9 @@ namespace Metamask.Data.Sql
         {
             var projectDir = Directory.GetCurrentDirectory();
             var projectName = Path.GetFileName(projectDir);
-            var webProjectPath = Path.Combine(projectDir, $"..\\{projectName}");
+            var webProjectPath = Path.Combine(projectDir, $"../{projectName}");
 
-            IConfigurationRoot configuration = new ConfigurationBuilder()
+            var configuration = new ConfigurationBuilder()
                 .SetBasePath(webProjectPath)
                 .AddJsonFile("appsettings.json")
                 .Build();
@@ -32,7 +32,7 @@ namespace Metamask.Data.Sql
             var builder = new DbContextOptionsBuilder<MetamaskSqlContext>();
             var connectionString = configuration.GetConnectionString("SqlDatabaseConnection");
 
-            builder.UseSqlServer(connectionString);
+            builder.UseNpgsql(connectionString);
 
             return new MetamaskSqlContext(builder.Options);
         }

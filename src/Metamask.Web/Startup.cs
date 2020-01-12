@@ -45,13 +45,7 @@ namespace Metamask.Web
             services
                 .AddDbContext<MetamaskSqlContext>(opts =>
                 {
-                    opts.UseSqlServer(connectionStrings.SqlDatabaseConnection,
-                        sqlServerOptionsAction: sqlOptions =>
-                        {
-                            sqlOptions.EnableRetryOnFailure(3,
-                                TimeSpan.FromSeconds(5),
-                                policies.GetSqlRetryCodes());
-                        });
+                    opts.UseNpgsql(connectionStrings.SqlDatabaseConnection);
                 });
 
             services.AddScoped<IPageMaskRepository, SqlPageMaskRepository>();
