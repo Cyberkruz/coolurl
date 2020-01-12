@@ -11,6 +11,7 @@ App_Data/
 rcf/
 PublishProfiles/
 .vs/
+.idea/
 artifacts/
 wwwroot/*
 

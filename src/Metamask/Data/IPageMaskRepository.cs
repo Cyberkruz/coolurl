@@ -7,7 +7,7 @@ namespace Metamask.Data
     /// I'm not a fan of the repository pattern, but
     /// since this domain doesn't have a complicated set
     /// of functions having a simple interface is a
-    /// helpful abtraction.
+    /// helpful abstraction.
     /// </summary>
     public interface IPageMaskRepository : IDisposable
     {

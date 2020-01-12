@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
 
 namespace Metamask.Web
 {
@@ -15,17 +16,17 @@ namespace Metamask.Web
         {
             try
             {
-                IWebHost host = BuildWebHost(args);
-                IConfiguration config = (IConfiguration)host.Services.GetService(typeof(IConfiguration));
+                var host = CreateHostBuilder(args).Build();
+                var config = (IConfiguration)host.Services.GetService(typeof(IConfiguration));
 
                 Log.Logger = new LoggerConfiguration()
                     .ReadFrom.Configuration(config)
                     .CreateLogger();
 
                 Log.Information("Initializing database");
-                using (IServiceScope scope = host.Services.CreateScope())
+                using (var scope = host.Services.CreateScope())
                 {
-                    IServiceProvider services = scope.ServiceProvider;
+                    var services = scope.ServiceProvider;
                     await SqlContextInitializer.Initialize(services);
                 }
                 Log.Information("Database initialized");
@@ -42,11 +43,14 @@ namespace Metamask.Web
                 Log.CloseAndFlush();
             }
         }
-
-        public static IWebHost BuildWebHost(string[] args) =>
-           WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseSerilog()
-                .Build();
+        
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder
+                        .UseStartup<Startup>()
+                        .UseSerilog();
+                });
     }
 }

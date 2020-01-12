@@ -13,8 +13,8 @@ namespace Metamask.Web.Configuration
     /// </summary>
     public class Policies
     {
-        public readonly RetryPolicy<HttpResponseMessage> RequestTimeoutRetryPolicy;
-        public readonly CircuitBreakerPolicy<HttpResponseMessage> RequestTimeoutCircuitBreaker;
+        public readonly AsyncRetryPolicy<HttpResponseMessage> RequestTimeoutRetryPolicy;
+        public readonly AsyncCircuitBreakerPolicy<HttpResponseMessage> RequestTimeoutCircuitBreaker;
 
         public Policies()
         {

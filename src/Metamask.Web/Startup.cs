@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System;
+using Microsoft.Extensions.Hosting;
 
 namespace Metamask.Web
 {
@@ -58,13 +59,11 @@ namespace Metamask.Web
             services.AddAutoMapper(typeof(DtoProfile).Assembly,
                     typeof(ModelProfile).Assembly);
 
-            services
-                .AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddControllersWithViews();
         }
         
         public void Configure(IApplicationBuilder app, 
-            IHostingEnvironment env,
+            IWebHostEnvironment env,
             IOptions<AppSettings> appSettings)
         {
             if (env.IsDevelopment())
@@ -79,15 +78,16 @@ namespace Metamask.Web
             var options = new RewriteOptions();
             options.AddAzureHostnameRedirect(appSettings.Value.Hostname);
             app.UseRewriter(options);
-
+    
             app.UseStatusCodePagesWithReExecute("/error/{0}");
+            app.UseRouting();
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
